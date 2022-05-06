@@ -1,0 +1,48 @@
+﻿@using KonusarakOgrenProje.Models
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div style="padding: 10px; margin-bottom: -15px; ">
+    <h2 style="text-align:center; margin:auto;">Ukraine’s Digital Battle With Russia Isn’t Going as Expected</h2>
+    <p style=" margin:40px; text-align: center;">
+        Kiev yakınlarındaki WIRED'a konuşan Fedorov, ülkesinin Rusya'nın 2014'te ilk kez işgal etmesinden bu yana bu an için hazırlandığını söyledi.
+        "Sekiz yılımız oldu," diyor.
+        Son haftalarda, Fedorov ve Ukrayna hükümeti, öldürülen ve yakalanan Rus askerlerini tanımlamak için tartışmalı yüz tanıma programı
+        ClearviewAI'yı kullandı. Rus bombardımanının ortasında bile ülkeyi bağlı tutmak için binlerce Elon Musk'ın Starlink terminalini konuşlandırdılar.
+        Sıradan Ukraynalıların asker hareketlerini rapor etmelerine izin vererek kitle kaynaklı istihbarat toplamaya sahipler. Ve belki de en önemlisi,
+        internetlerini, enerjilerini ve finansal sistemlerini çevrimdışı hale getirmek için agresif girişimleri geri püskürttüler.
+    </p>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-6" style="margin: auto;">
+                <p>
+                    @item.Question  cxxbb
+                    @*1)Ukrayna'nın 31 yaşındaki dijital dönüşüm bakanı Mykhailo Fedorov, "Bunun temel nedeninin sistemlerimiz arasındaki fark olduğunu
+                        düşünüyorum" diyor*@.
+                </p>
+                <p style="border: solid; border-color: grey; padding: 5px; padding-left: 6px; ">A)@item.ChoiceA @*Kiev yakınlarındaki WIRED'a konuşan Fedorov*@</p>
+                <p style="border: solid; border-color: grey; padding: 5px; padding-left: 6px;">B)@item.ChoiceB @*Kiev yakınlarındaki WIRED'a konuşan Fedorov*@</p>
+                <p style="border: solid; border-color: grey; padding: 5px; padding-left: 6px;">C)@item.ChoiceB @*Kiev yakınlarındaki WIRED'a konuşan Fedorov*@</p>
+                <p style="border: solid; border-color: grey; padding: 5px; padding-left: 6px;">D)@item.ChoiceD @*Kiev yakınlarındaki WIRED'a konuşan Fedorov*@</p>
+            </div>
+        }
+        <div class="col-6" style="margin: auto; ">
+            <p>
+                2) Ukrayna'nın 31 yaşındaki dijital dönüşüm bakanı Mykhailo Fedorov, "Bunun temel nedeninin sistemlerimiz arasındaki fark olduğunu
+                düşünüyorum" diyor.
+            </p>
+            <p style="border: solid; border-color: grey; padding: 5px; padding-left: 6px;">A) Kiev yakınlarındaki WIRED'a konuşan Fedorov</p>
+            <p style="border: solid; border-color: grey; padding: 5px; padding-left: 6px;">B) Kiev yakınlarındaki WIRED'a konuşan Fedorov</p>
+            <p style="border: solid; border-color: grey; padding: 5px; padding-left: 6px;">C) Kiev yakınlarındaki WIRED'a konuşan Fedorov</p>
+            <p style="border: solid; border-color: grey; padding: 5px; padding-left: 6px;">D) Kiev yakınlarındaki WIRED'a konuşan Fedorov</p>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success btn-lg">
+        SINAVI TAMAMLA
+    </button>
+
+</div>

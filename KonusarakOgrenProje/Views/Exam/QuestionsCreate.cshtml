@@ -1,0 +1,66 @@
+﻿@model KonusarakOgrenProje.Models.Questions
+<form class="form form-vertical" enctype="multipart/form-data" asp-action="QuestionsCreate" asp-controller="Exam" method="post">
+    <div class="col-11">
+        <div class="mb-1" style="border: solid; border-color: grey; width:96%;">
+            <select class="select2 form-select" name="ExamId" id="select2-basic" style="width: 100%; height:32px;">
+                @foreach (var itemSubject in ViewBag.Exams)
+                {
+                    <option value="@itemSubject.ExamId">@itemSubject.ExamName</option>
+                }
+            </select>
+        </div>
+    </div>
+    <textarea class="textarea" id="textarea" readonly="readonly" style="width: 85%; margin-bottom: 3%; margin-top:3%;margin-left:2%;" rows="10">
+  THERE'S A LOT to love about the 2021 iPad Mini (8/10, WIRED Recommends). We think it's the Best iPad for portability and the best portable tablet 
+in general. But it's just too darn expensive. WIRED reviewer Brenda Stolyar said as much in her in-depth review: “It's tough to justify such a high
+ price on a screen when I already have so many around me.”
+Until at least Mother's Day, it's a little less expensive. The iPad Mini is on sale for $400 at Amazon, Best Buy, and Target. This is the cheapest 
+we've ever seen the tablet sell for, at $100 off its official price and $60 less than the previous-best price (seen on Amazon). Though prices vary,
+ the discount applies to every color, connectivity, and storage configuration. If you've been eyeing this good-but-overpriced tablet, this sale is
+ worth checking out. Note that availability is fluctuating and the discount may not last very long. 
+    </textarea>
+    @for (int i = 1; i <= 4; i++)
+    {
+        <div style="text-align:center; margin-top:25px;">
+            <div class="col-11">
+                <div class="mb-1">
+                    <input required type="text" style="width: 954px;" autocomplete="off" id="first-name-vertical" placeholder="Soru @i" class="form-control" name="Question_@i" value="" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5 m-3">
+                    <div>
+                        <input required type="text" autocomplete="off" placeholder="A)" id="first-name-vertical" class="form-control" name="ChoiceA_@i" value="" />
+                    </div>
+                </div>
+                <div class="col-5 m-3">
+                    <div>
+                        <input required type="text" autocomplete="off" id="first-name-vertical" class="form-control" placeholder="B)" name="ChoiceB_@i" value="" />
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div>
+                        <input required type="text" autocomplete="off" style="margin-left: 17px;" id="first-name-vertical" class="form-control" placeholder="C)" name="ChoiceC_@i" value="" />
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div>
+                        <input required type="text" autocomplete="off" style="margin-left: 48px;" id="first-name-vertical" class="form-control" placeholder="D)" name="ChoiceD_@i" value="" />
+                    </div>
+                </div>
+                <div class="col-6" style="text-align: center; margin-left: 275px; ">
+                    <div class="mb-1">
+                        <select class="select2 form-select" style="width: 235px; margin: 10px" required name="Reply_@i" id="select2-basic">
+                            <option>Doğru Cevap Seç</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    <button style="margin-left:39%;margin-top:1%" type="submit" class="btn btn-success me-1">SINAV OLUŞTUR</button>
+</form>

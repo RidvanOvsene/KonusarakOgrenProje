@@ -1,0 +1,54 @@
+﻿@model IEnumerable<KonusarakOgrenProje.Models.Exams>
+@{int i = 1; }
+<div class="row" id="table-responsive">
+    <div class="col-12">
+        <div class="card">
+
+
+            <div class="table-responsive" style="margin-left:3%;">
+                <div class="row">
+                    <h4 class="toast-header col-1">#</h4>
+                    <h4 class="toast-header col-5">Title</h4>
+                    <h4 class="toast-header col-2">Date</h4>
+                    <h4 class="toast-header col-2"></h4>
+                </div>
+                @foreach (var item in Model)
+                {
+                    <div class="row">
+                        <p class="col-1">@i</p>
+                        <div class="col-6">
+                            <a href="/Exam/Questions?ExamId=@item.ExamId">
+                                <p>@item.ExamName</p>
+                            </a>
+                        </div>
+
+                        <p class="col-2">@item.CreateDate.Value.ToString("dd.MM.yy")</p>
+                        <input style="height:35px;margin-top:6px;" class="btn btn-danger" type="button" onclick="DeleteItem(this.id)" id="@item.ExamId" name="name" value="Delete" />
+
+                    </div>
+                    i = i + 1;
+                }
+              
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function DeleteItem(id) {
+        debugger
+        console.log(id);
+        var data = new Object();
+        data.ExamId = id;
+        $.ajax({
+            url: '/Exam/ExamDelete',
+            type: 'post',
+            dataType: 'json',
+            data: data,
+            success: function (data) {
+                console.log(data);
+                var url = '/Exam/ExamList';
+                window.location.href = url;
+            },
+        });
+    }
+</script>
